@@ -22,12 +22,12 @@ const Tweets = props => {
     props.tweets.length > 0 && (
       collapsed ? (
           //Show just the summary statistics.
-          <div class='rel_tweets_summary' onClick={() => setCollapsed(false)}>
+          <div class='rel-tweets-summary' onClick={() => setCollapsed(false)}>
             {props.tweets.length + " tweets"}
           </div>
         ) : (
           //Show tweets in expanded view.
-          <div class='rel_tweets'>
+          <div class='rel-tweets'>
             {props.tweets.map((jtweet, ix) => <Tweet key={ix} tweet={jtweet} />)}
           </div>
         )
@@ -39,14 +39,14 @@ const Paper = props => {
   const p = props.paper
   const url = p.rel_link + '.full.pdf';
   return (
-    <div class={'rel_paper ' + p.rel_site}>
+    <div class={'rel-paper ' + p.rel_site}>
+      <div class='rel-title'><a href={p.rel_link}>{p.rel_title}</a></div>
+      <div class='rel-authors'>{p.rel_authors}</div>
       <div class='dllinks'>
+        <div class='metadata rel-date'>{p.rel_date}</div>
         <div class='metadata action'><a href={'/sim/' + p.rel_doi}>show similar</a></div>
-        <div class='metadata action'><a href={url}>pdf</a></div>
-        <div class='metadata rel_date'>{p.rel_date}</div>
+        <div class='metadata action'><a href={url}>download pdf</a></div>
       </div>
-      <div class='rel_title'><a href={p.rel_link}>{p.rel_title}</a></div>
-      <div class='rel_authors'>{p.rel_authors}</div>
       <div class='rel_abs'>{p.rel_abs}</div>
       <Tweets tweets={p.tweets} />
     </div>
@@ -64,7 +64,7 @@ const PaperList = props => {
   return (
     <div>
       <div id="info">{msg[gvars.sort_order]}</div>
-      <div id="paperList" class="rel_papers">
+      <div id="paper-list" class="rel-papers">
         {plst}
       </div>
     </div>

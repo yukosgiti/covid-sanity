@@ -1,182 +1,100 @@
 body {
-    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1em;
     padding: 0;
-    font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    background-color: #F6F3E5;
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#titdiv {
-	height: 50px;
-	background-color: #840000;
-	color: white;
-	padding-top: 10px;
-	padding-left: 20px;
-	border-bottom: 1px solid #540000;
+body > header {
+    background-color: brown;
+    grid-area: 1/1/2/4;
+    display: inherit;
+    grid-template-columns: 1fr 2fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
-h1 {
-    font-size: 24px;
-    padding: 0;
-    margin: 0;
+
+#sbox  {
+    flex-grow: 1;
+    width: 99%;
+    height: 2em;
+    border: none;
+}
+
+#sbox > input {
+    width: calc(100% - 2em);
+    height: 100%;
+    font-size: large;
+    padding-left: 2em;
+}
+.index-count {
+    font-size: small;
+    margin: 0 5em;
+    margin-bottom: 1em;
+}
+
+body > header > div {
+    color: white;
+}
+
+body > header > div > a {
+    color: white;
+    text-decoration: none;
+}
+body > header > div > a > h1{
+    color: white;
     font-weight: 400;
+    margin: 0 2em;
 }
-#titdiv a {
-    font-weight: 300;
-}
-#titdiv a:visited {
-    color: white;
-}
-#titdiv a:link {
-    color: white;
+#sbox {
+    display: inherit;
+    grid-area: 1/2/2/3;
 }
 
 #wrap {
-    width: 970px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-area: 2/2/3/3;
 }
-
-.rel_paper {
-    margin: 10px;
-    padding: 6px;
-    color: #333;
-    font-size: 16px;
-    border: 1px solid #333;
-    background-color: white;
-}
-
-.rel_paper a {
-    font-weight: normal;
-    text-decoration: none;
-}
-
-.rel_authors {
-    font-weight: 300;
-}
-
-.dllinks {
-    border-radius: 5px;
-    float: right;
-    text-align: right;
-}
-
-.metadata {
-    font-size: 16px;
-    padding: 5px;
-    display: inline-block;
-}
-.action {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.rel_date {
-    color: #900;
-}
-
-.rel_title {
-    font-size: 18px;
-}
-
-.medrxiv .rel_title a {
-    color: #0e4c92;
-}
-
-.biorxiv .rel_title a {
-    color: #bc2635;
-}
-
-.rel_abs {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    background-color: #EFE;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px 5px 0px 0px;
-}
-
-.rel_tweets_summary {
-    background-color: #EEF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.tweet {
-    background-color: #EEF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 5px;
-    min-height: 48px;
-}
-
-.tweet img {
-    float: left;
-    margin-right: 5px;
-    border-radius: 5px;
-}
-
-.tweet .meta {
-    margin-top: 3px;
-}
-
-.tweet .following {
-    background-color: #0e4c92;
-    padding: 3px 5px 3px 5px;
-    border-radius: 3px 0px 0px 3px;
-    color: white;
-}
-
-.tweet .uname {
-    padding: 3px 5px 3px 5px;
-    background-color: #6a99d4;
-    color: white;
-    border-radius: 0px 3px 3px 0px;
-    margin-right: 5px;
-}
-
-.tweet .uname a {
-    color: white;
-}
-
-.tweet .text {
-    line-height: 18px;
-}
-
 
 #info {
-    background-color: #EEF;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #CCD;
-    color: #005;
-    font-weight: 300;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    color: #856404;
+    padding-left: 1.5em;
+    font-weight: 600;
+    background-color: #fff3cd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-#sbox {
-    margin-top: 10px;
-    text-align: center;
+.rel-papers {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 1em;
 }
 
-#qfield {
-    border: 5px solid white;
-    width: 920px;
-    border: solid 1px #999;
+.rel-paper {
+    padding: 1.5em;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
-    height: 40px;
-    font-size: 22px;
-    color: "#333";
+.rel-title {
+    font-size: large;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
 
-    padding-left: 50px;
-
-    background-image:url('/static/search.png');
-    background-repeat:no-repeat;
-    background-position:left center;
-    outline:0;
-  }
+.rel-authors {
+    font-size: small;
+}
+.dllinks {
+    display: grid;
+    column-width: 1em;
+    grid-template-columns: 2fr 2fr 2fr 71%;
+    font-size: small;
+    padding-bottom: 1em;
+}
